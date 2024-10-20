@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CV Généré{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <style>
+        .cv-generation-container {
+            text-align: center;
+            margin-top: 50px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .message {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .pdf-icon {
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .pdf-icon img {
+            width: 100px;
+            cursor: pointer;
+        }
+        .link-container {
+            margin-top: 40px;
+        }
+        .link-container a {
+            text-decoration: none;
+            color: #4989b8;
+            font-size: 18px;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        .link-container a:hover {
+            text-decoration: underline;
+        }
+        body{
+            background-color:#f6eae1;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="cv-generation-container">
+        <h1 class="title">Votre CV a été généré avec succès !</h1>
+        
+        <p class="message">Voici votre CV généré. Pour toute question, problème ou autre, veuillez visiter notre 
+            <a href="{{ path('app_contact') }}" style="color: #4989b8; font-weight: bold;">page de contact</a>.
+        </p>
+
+        <div class="pdf-icon">
+            <a href="{{ pdfFilePath }}" target="_blank" download>
+                <img src="{{ asset('assets/pdfu.png') }}" alt="Télécharger le CV en PDF"><br>
+                Téléchargez
+            </a>
+        </div>
+
+        <div class="link-container">
+            <a href="{{ path('app_experience_niveau') }}">Générer un autre CV</a>
+            <a href="{{ path('app_home_page') }}">Retour à la page d'accueil</a>
+        </div>
+    </div><br><br><br>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Conseils pour bien remplir ton CV{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/ConseilsCV.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1 class="titre-section">Conseils pour un CV Impactant</h1>
+    <p class="intro-texte">Remplir son CV de manière efficace est essentiel pour se démarquer. Voici nos meilleurs conseils pour que votre CV attire l'attention des recruteurs et valorise vos compétences.</p>
+
+    {# Section 1: Erreurs à éviter #}
+    <section class="conseil-section">
+        <h2 class="sous-titre">1. Évitez les fautes d'orthographe</h2>
+        <p>Les fautes d'orthographe peuvent vous discréditer rapidement aux yeux des recruteurs. Prenez le temps de relire votre CV ou utilisez des outils de correction en ligne pour les éviter.</p>
+    </section>
+
+    {# Section 2: Mise en avant des compétences #}
+    <section class="conseil-section">
+        <h2 class="sous-titre">2. Mettez en avant vos compétences clés</h2>
+        <p>Identifiez les compétences qui correspondent le mieux au poste que vous visez et mettez-les en avant. Par exemple, si vous êtes développeur, valorisez vos connaissances en programmation et vos réalisations techniques.</p>
+    </section>
+
+    {# Section 3: Personnalisation du CV selon le métier #}
+    <section class="conseil-section">
+        <h2 class="sous-titre">3. Adaptez votre CV en fonction du métier</h2>
+        <p>Chaque secteur a des attentes différentes. Par exemple, pour les métiers de la finance, la précision et les réalisations quantitatives sont appréciées, tandis que les métiers créatifs favorisent un design innovant et une mise en page originale.</p>
+    </section>
+
+    {# Section 4: Expérience professionnelle #}
+    <section class="conseil-section">
+        <h2 class="sous-titre">4. Soignez la description de vos expériences</h2>
+        <p>Chaque expérience doit être décrite avec des verbes d’action, en mettant en avant les résultats obtenus. Par exemple, "Optimisé les processus de développement, augmentant ainsi la productivité de 20%".</p>
+    </section>
+
+    {# Section 5: Astuces supplémentaires #}
+    <section class="conseil-section">
+        <h2 class="sous-titre">5. Astuces supplémentaires</h2>
+        <ul>
+            <li><strong>Structurez :</strong> Organisez les informations de façon claire et concise.</li>
+            <li><strong>Utilisez des mots-clés :</strong> Adaptés au poste pour passer les filtres de sélection.</li>
+            <li><strong>Mettez en page :</strong> Soignez la mise en forme pour un rendu professionnel et agréable.</li>
+        </ul>
+    </section>
+
+    {# Bouton d'action #}
+    <div class="container-bouton">
+        <p class="texte-bouton">Envie de démarrer et de créer un CV optimisé ?</p>
+        <a href="#"><button class="bouton-action">Commencez avec nos conseils</button></a>
+    </div>
+</div>
+
+{% endblock %}

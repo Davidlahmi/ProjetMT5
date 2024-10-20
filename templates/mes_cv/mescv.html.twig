@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes CV - Liste des CV{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/MesCv.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <style>
+        .cv-list-container {
+            text-align: center;
+            margin-top: 50px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .cv-item {
+            display: inline-block;
+            margin-top: 20px;
+            width: 200px;
+            vertical-align: top;
+            text-align: center;
+            margin-right: 20px;
+        }
+        .cv-item img {
+            width: 100px;
+            cursor: pointer;
+        }
+        .cv-item p {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+        .link-container {
+            margin-top: 40px;
+        }
+        .link-container a {
+            text-decoration: none;
+            color: #4989b8;
+            font-size: 18px;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        .link-container a:hover {
+            text-decoration: underline;
+        }
+        .message {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .delete-account {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .delete-account button {
+            background-color: #ff4d4d;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .delete-account button:hover {
+            background-color: #cc0000;
+        }
+        body {
+            background-color: #f6eae1;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="cv-list-container">
+        <h1 class="title">Mes CV générés</h1>
+
+        {% if mescvs is empty %}
+            <p class="message">Vous n'avez encore généré aucun CV.</p>
+        {% else %}
+            <div class="cv-items">
+                {% for cv in mescvs %}
+                    <div class="cv-item">
+                        <a href="{{ asset('assets/dossiereleves/' ~ cv.filename) }}" target="_blank" download>
+                            <img src="{{ asset('assets/pdfu.png') }}" alt="Télécharger le CV en PDF">
+                            <p>{{ cv.title }}</p>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <div class="link-container">
+            <a href="{{ path('app_experience_niveau') }}">Générer un autre CV</a>
+            <a href="{{ path('app_home_page') }}">Retour à la page d'accueil</a>
+        </div>
+    </div><br><br>
+{% endblock %}

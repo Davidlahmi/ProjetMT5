@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f6eae1;
+        }
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px;
+            text-align: center;
+        }
+        .blog-title {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #4989b8;
+            margin-bottom: 30px;
+        }
+        .article {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        .article img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        .article-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .article-description {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .article-content {
+            font-size: 1em;
+            color: #666;
+            line-height: 1.6;
+            display: none;
+        }
+        .article-content.show {
+            display: block;
+        }
+        .article-date {
+            font-size: 0.9em;
+            color: #999;
+            margin-top: 10px;
+        }
+        .show-more-btn {
+            background-color: #4989b8;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .show-more-btn:hover {
+            background-color: #337aa8;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="blog-container">
+        <h1 class="blog-title">Articles de Blog</h1>
+
+        {% for article in articles %}
+            <div class="article">
+                <h2 class="article-title">{{ article.titre }}</h2>
+                
+                <p class="article-description">{{ article.description }}</p>
+
+                <div class="article-content" id="content-{{ loop.index }}">
+                    {{ article.contenu | raw }}
+                </div>
+
+                <button class="show-more-btn" onclick="toggleContent({{ loop.index }})">Lire la suite...</button>
+
+                <p class="article-date">Publié le {{ article.creation|date('d M Y, H:i') }}</p>
+
+                {% if article.source %}
+                    <p class="article-source"><strong>Source:</strong> {{ article.source }}</p>
+                {% endif %}
+            </div>
+        {% else %}
+            <p>Aucun article de blog pour l'instant.</p>
+        {% endfor %}
+    </div>
+
+    <script>
+        function toggleContent(index) {
+            const content = document.getElementById('content-' + index);
+            content.classList.toggle('show');
+            const button = event.target;
+            button.textContent = content.classList.contains('show') ? 'Voir moins...' : 'Lire la suite...';
+        }
+    </script>
+{% endblock %}

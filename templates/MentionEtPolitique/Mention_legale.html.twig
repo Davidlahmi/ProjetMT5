@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mentions Légales{% endblock %}
+
+{% block stylesheets %}
+<style>
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    font-weight: bold;
+}
+
+p, ul {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+body{
+    background-color:#f6eae1;
+}
+</style>
+{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Mentions Légales</h1><br>
+    <div class="legal-content">
+        <h2>1. Éditeur du Site</h2>
+        <p>Le présent site est édité par <strong>David Lahmi</strong>.</p>
+        
+        <h2>2. Hébergement</h2>
+        <p>Le site est hébergé par :</p>
+        <ul>
+            <li><strong>Nom</strong> : Hostinger</li>
+            <li><strong>Adresse</strong> : Hostinger International Ltd., 61 Lordou Vironos Street, 6023 Larnaca, Chypre</li>
+            <li><strong>Numéro de téléphone</strong> : +357 24030137</li>
+        </ul>
+        
+        <h2>3. Contact</h2>
+        <p>Pour toute question ou réclamation concernant le site, vous pouvez contacter l’éditeur à l’adresse e-mail suivante : <strong>assistance.perfecresume@gmail.com</strong>.</p>
+        
+        <h2>4. Propriété Intellectuelle</h2>
+        <p>Le contenu présent sur ce site, notamment les textes, images, et graphismes, sont protégés par le droit d'auteur. Toute reproduction sans autorisation est interdite.</p>
+        
+        <h2>5. Responsabilité</h2>
+        <p>Ce site est destiné à des fins d’information et d’aide à la création de CV. L’éditeur décline toute responsabilité quant aux éventuelles erreurs, omissions ou aux dommages résultant de l’utilisation des informations publiées sur le site.</p>
+    </div>
+</div><br>
+{% endblock %}

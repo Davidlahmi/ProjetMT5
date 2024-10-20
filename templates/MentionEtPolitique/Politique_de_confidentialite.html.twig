@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Politique de Confidentialité{% endblock %}
+
+{% block stylesheets %}
+<style>
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    font-weight: bold;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+body{
+    background-color:#f6eae1;
+}
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Politique de Confidentialité</h1><br>
+    <div class="privacy-content">
+        <h2>1. Collecte des Données Personnelles</h2>
+        <p>Lors de la création de votre CV, nous recueillons certaines informations personnelles, telles que votre nom, adresse e-mail, et informations professionnelles. Ces données sont nécessaires pour vous fournir le service de génération de CV.</p>
+        
+        <h2>2. Utilisation des Données</h2>
+        <p>Les informations collectées sur notre site sont utilisées exclusivement pour créer votre CV et améliorer nos services. Nous ne vendons, louons ou échangeons jamais vos données personnelles avec des tiers.</p>
+        
+        <h2>3. Conservation des Données</h2>
+        <p>Vos données sont conservées aussi longtemps que nécessaire pour vous fournir les services demandés ou conformément à nos obligations légales.</p>
+        
+        <h2>4. Partage des Données</h2>
+        <p>Nous pouvons être amenés à partager vos données avec des prestataires tiers pour l’hébergement du site ou le traitement de certaines données, sous réserve de leur engagement à respecter la confidentialité de vos informations.</p>
+        
+        <h2>5. Sécurité des Données</h2>
+        <p>Nous prenons toutes les précautions nécessaires pour garantir la sécurité de vos données personnelles, y compris des mesures de protection physiques, électroniques et administratives adaptées.</p>
+        
+        <h2>6. Vos Droits</h2>
+        <p>Conformément à la réglementation en vigueur, vous disposez d’un droit d’accès, de rectification, d’effacement, ainsi que du droit à la portabilité de vos données. Vous pouvez également vous opposer au traitement de vos données pour des motifs légitimes.<br>Vous pouvez demander la suppression de vos données à tout moment en nous contactant à l’adresse suivante : <strong>dpo.perfectresume@gmail.com</strong></p>
+        
+        <h2>7. Modifications de la Politique de Confidentialité</h2>
+        <p>Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. Toute modification sera publiée sur cette page.</p>
+    </div>
+</div><br>
+{% endblock %}

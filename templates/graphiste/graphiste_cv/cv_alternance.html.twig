@@ -1,0 +1,155 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous les Cv Immobilier{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/CvDeveloppeur.css')}}">
+    <link rel="stylesheet" href="{{asset('css/Experience.css')}}">
+    <link rel="stylesheet" href="{{asset('css/Metier.css')}}">
+{% endblock %}
+
+{% block body %}
+<div id="content" class="content">
+    <div class="container-fluid BackgroundGif">
+        <div class="row">
+            <div class="col-7">
+                <div class="BlockLine">
+                    <span class="line">GENERER SON</span><br>
+                    <span class="line lineCV">CV</span><br>
+                </div>
+            </div>
+            <div class="col-5">
+                <img class="ImgPersonne ImgPersonneD" src="{{asset('assets/ImageDame.png')}}">
+            </div>
+        </div>
+    </div>
+
+    <div class="BackgroundColorr">
+        <img class="ImgProgressionUn" src="{{asset('assets/ProgressionTrois.png')}}">
+
+        <div class="BlockSpan">
+            <span class="Items ItemUn">Ajouter une experience</span>
+            <span class="Items ItemsDeux">Choisir le modèle</span>
+            <span class="Items ItemsTrois">Généré son CV</span>
+        </div>
+
+        <p class="PhraseMetier">Voici les différents template pour le métier Graphiste</p>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-5">
+                    <img id="cvImg4" class="CVT4" src="{{asset('assets/CvGraphiste/4.png')}}">
+                </div>
+
+                <div class="col-2 ColDeux">
+                    <img class="LogoUn" src="{{asset('assets/CvDeveloppeur/Logo1.png')}}">
+                </div>
+
+                <div class="col-5">
+                    <img id="cvImg5" class="CVT5" src="{{asset('assets/CvGraphiste/5.png')}}">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- AJOUT DU BLOC MODALE ICI -->
+<div id="cvModal" class="cv-modal">
+    <span class="cv-modal-close">&times;</span>
+    <span class="cv-modal-prev">&#10094;</span>
+    <img class="cv-modal-content" id="cvImg">
+    <span class="cv-modal-next">&#10095;</span>
+    <div id="cvModalCaption"></div>
+    <button id="generateCvButton" class="generate-cv-button">Générer mon CV</button>
+</div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var modal = document.getElementById("cvModal");
+    var modalImg = document.getElementById("cvImg");
+    var captionText = document.getElementById("cvModalCaption");
+    var content = document.getElementById("content");
+    var generateButton = document.getElementById("generateCvButton");
+    var currentImgIndex = 0;
+    
+    // Liste des IDs des images
+    var imgIds = ["cvImg4", "cvImg5"];
+
+    // Fonction pour ouvrir la modale avec l'image à l'index donné
+    function openModal(index) {
+        currentImgIndex = index;
+        modal.style.display = "block";
+        modalImg.src = document.getElementById(imgIds[currentImgIndex]).src;  // Utilise la même source que l'image cliquée
+        captionText.innerHTML = document.getElementById(imgIds[currentImgIndex]).alt; // Ajoute la légende basée sur l'attribut alt
+        content.classList.add('background-blur');
+        generateButton.style.display = "block"; // Affiche le bouton
+    }
+
+    // Ajouter un événement de clic pour chaque image
+    imgIds.forEach(function(id, index) {
+        var img = document.getElementById(id);
+        img.addEventListener("click", function() {
+            openModal(index);  // Ouvrir la modale à l'index correspondant à l'image
+        });
+    });
+
+    // Ferme la modale
+    var span = document.getElementsByClassName("cv-modal-close")[0];
+    span.addEventListener("click", function() { 
+        modal.style.display = "none";
+        content.classList.remove('background-blur');
+        generateButton.style.display = "none"; // Cache le bouton
+    });
+
+    // Navigation vers l'image précédente
+    document.getElementsByClassName("cv-modal-prev")[0].addEventListener("click", function() {
+        currentImgIndex = (currentImgIndex === 0) ? imgIds.length - 1 : currentImgIndex - 1;
+        openModal(currentImgIndex);
+    });
+
+    // Navigation vers l'image suivante
+    document.getElementsByClassName("cv-modal-next")[0].addEventListener("click", function() {
+        currentImgIndex = (currentImgIndex === imgIds.length - 1) ? 0 : currentImgIndex + 1;
+        openModal(currentImgIndex);
+    });
+
+generateButton.addEventListener("click", function() {
+    // Définir l'URL en fonction de l'image sélectionnée
+    let targetUrl;
+    switch (currentImgIndex) {
+        case 0:
+            targetUrl = "/cv4graphiste";
+            break;
+        case 1:
+            targetUrl = "/cv5graphiste";
+            break;
+        default:
+            targetUrl = "/contact";
+    }
+
+    // Vérifier si l'URL est accessible
+    fetch(targetUrl, { method: 'HEAD' })
+        .then((response) => {
+            if (response.ok) {
+                // L'URL existe, rediriger vers cette URL
+                window.location.href = targetUrl;
+            } else {
+                // L'URL n'existe pas, rediriger vers /contact
+                window.location.href = "/contact";
+            }
+        })
+        .catch(() => {
+            // En cas d'erreur (par exemple, l'URL n'existe pas), rediriger vers /contact
+            window.location.href = "/contact";
+        });
+});
+});
+
+</script>
+{% endblock %}

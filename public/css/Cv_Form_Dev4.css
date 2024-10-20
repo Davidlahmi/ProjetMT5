@@ -1,0 +1,164 @@
+.photo-upload {
+    display: inline-block;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+}
+
+.photo-upload img {
+    max-width: 150px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    cursor: pointer;
+}
+
+.BackgroundOrange{
+    background-color:#f6eae1;
+}
+
+.TitreUn{
+    font-size: 50px;
+    font-family: "Poppins";
+    color: black;
+    font-weight: bold;
+    padding-top: 50px;
+}
+
+.InfoForm{
+    font-size: 20px;
+    font-family: 'Open Sans';
+    text-align: center;
+    margin-right: 470px;
+}
+
+.BackgroundBleu{
+    width: 100%;
+    height: 100%;
+    background-color: #4989b8;
+    margin: 0;
+    padding: 0;
+}
+
+.InfoInput{
+    font-size: 26px;
+    color: #4989b8;
+    font-family: 'Poppins';
+    font-weight: bold;
+}
+
+.InputForm{
+    width: 350px;
+    height: 50px;
+    font-family: "Poppins";
+    background-color: #f9aa92 !important;
+    -webkit-background-clip: padding-box !important;
+    background-clip: padding-box !important;
+    border-radius: 20px;
+    border: none;
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.InputFormm{
+    width: 350px;
+    height: 150px;
+    font-family: "Poppins";
+    background-color: #f9aa92 !important;
+    -webkit-background-clip: padding-box !important;
+    background-clip: padding-box !important;
+    border-radius: 20px;
+    border: none;
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 7px;
+}
+
+.InputForm:-webkit-autofill,
+.InputFormm:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #f9aa92 inset !important;
+    box-shadow: 0 0 0 30px #f9aa92 inset !important;
+    -webkit-text-fill-color: black !important;
+}
+
+.InputForm:-webkit-autofill::placeholder,
+.InputFormm:-webkit-autofill::placeholder {
+    color: black;
+    font-family: "Poppins";
+}
+
+.InputForm:focus,
+.InputFormm:focus{
+    outline: none;
+    border-color:none;
+}
+
+.InputForm::placeholder,
+.InputFormm::placeholder{
+    color: black;
+    font-family: "Poppins";
+    font-size: 15px;
+}
+
+.BoutonGenerer{
+    border: none;
+    border-radius: 30px;
+    color: white;
+    width:260px;
+    height: 55px;
+    font-size: 23px;
+    font-family: "Poppins";
+    background-color: #4989b8;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    margin-left: 370px;
+    font-weight: bold;
+}
+
+.form{
+    margin-left: 150px;
+}
+
+.TexteImport{
+    font-size: 30px;
+    color: black;
+    font-family: "Poppins";
+    text-align: center;
+    padding-top: 60px;
+}
+
+.BoutonRetirer{
+    font-size: 15px;
+    font-family: "Poppins";
+    border: none;
+    margin-top: 20px;
+    width: 150px;
+    height: 30px;
+    border-radius: 20px;
+}
+
+.cv{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: auto;
+    margin-top: 30px;
+}
+
+.textcv{
+    font-size: 25px;
+    font-family: "Poppins";
+    text-align: center;
+    margin-top: 120px;
+}
+
+.image-advice{
+    font-family: "Poppins";
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 20px;
+}

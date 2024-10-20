@@ -1,0 +1,95 @@
+/* Container principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre principal */
+.titre-section {
+    font-size: 2.2em;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Texte d'introduction */
+.intro-texte {
+    font-size: 1.1em;
+    color: #666;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Section conseils */
+.conseil-section {
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-left: 6px solid #ff6600; /* Couleur de surlignage sur la gauche */
+    border-radius: 4px;
+}
+
+/* Sous-titre des sections */
+.sous-titre {
+    font-size: 1.5em;
+    color: #ff6600;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Texte de chaque conseil */
+.conseil-section p {
+    font-size: 1em;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Liste de conseils supplémentaires */
+.conseil-section ul {
+    padding-left: 20px;
+    list-style-type: disc;
+    margin-top: 10px;
+}
+
+.conseil-section ul li {
+    font-size: 1em;
+    color: #666;
+    margin: 5px 0;
+}
+
+/* Conteneur pour le bouton */
+.container-bouton {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Texte au-dessus du bouton */
+.texte-bouton {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Bouton d'action */
+.bouton-action {
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff6600;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.bouton-action:hover {
+    background-color: #e65c00;
+}

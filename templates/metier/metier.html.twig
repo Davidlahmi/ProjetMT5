@@ -1,0 +1,161 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Metier{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/Metier.css')}}">
+    <link rel="stylesheet" href="{{asset('css/Experience.css')}}">
+{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid BackgroundGif">
+    <div class="row">
+        <div class="col-7">
+            <div class="BlockLine">
+                <span class="line">CHOISIR SON</span><br>
+                <span class="line linemetier">METIER</span><br>
+            </div>
+        </div>
+        <div class="col-5">
+            <img class="ImgPersonne" src="{{asset('assets/PhotoMetier.png')}}">
+        </div>
+    </div>
+</div>
+
+<div class="BackgroundColor">
+
+<img class="ImgProgressionDeux" src="{{asset("assets/ProgressionDeux.png")}}">
+
+<div class="BlockSpan BlockSpanDeux">
+    <span class="Items ItemUn">Ajouter une experience</span>
+    <span class="Items ItemsDeux">Choisir le modèle</span>
+    <span class="Items ItemsTrois">Généré son CV</span>
+</div>
+
+<div class="container">
+    <div class="image-button-block">
+        <img src="{{ asset('assets/Développeur.png') }}" alt="Développeur">
+        <a href="{{ path('app_developpeur', { 'experience': experience }) }}"><button>&lt;/Développeur&gt;</button></a>
+    </div>
+
+    <div class="image-button-block">
+        <img src="{{asset('assets/Commercial.png')}}" alt="Commercial">
+        <a href="{{ path('app_commercial', { 'experience': experience }) }}"><button>&lt;/Commercial&gt;</button></a>
+    </div>
+
+    <div class="image-button-block">
+        <img src="{{asset('assets/Graphiste.png')}}" alt="Graphiste">
+        <a href="{{ path('app_graphiste', { 'experience': experience }) }}"><button>&lt;/Graphiste&gt;</button></a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="image-button-block">
+        <img src="{{asset('assets/Développeur.png')}}" alt="Immobilier">
+        <a href="{{ path('app_immobilier', { 'experience': experience }) }}"><button>&lt;/Immobilier&gt;</button></a>
+    </div>
+
+    <div class="image-button-block">
+        <img src="{{asset('assets/Commercial.png')}}" alt="Informaticien">
+        <a href="{{ path('app_informaticien', { 'experience': experience }) }}"><button>&lt;/Informaticien&gt;</button></a>
+    </div>
+
+    <div class="image-button-block">
+        <img src="{{asset('assets/Graphiste.png')}}" alt="Comptable">
+        <a href="{{ path('app_comptable', { 'experience': experience }) }}"><button>&lt;/Comptable&gt;</button></a>
+    </div>
+</div>
+
+
+<center><button class="VoirPLus" id="voir-plus">Voir plus ...</button></center>
+
+
+<div id="metiers-supplementaires" class="hidden">
+
+    <div class="container">
+        <div class="image-button-block">
+            <img src="{{asset('assets/Développeur.png')}}" alt="Marketing">
+            <a href="{{ path('app_marketing', { 'experience': experience }) }}"><button>&lt;/Marketing&gt;</button></a>
+        </div>
+
+        <div class="image-button-block">
+            <img src="{{asset('assets/Commercial.png')}}" alt="Babysitter">
+            <a href="{{ path('app_babysitter', { 'experience': experience }) }}"><button>&lt;/Babysitter&gt;</button></a>
+        </div>
+
+        <div class="image-button-block">
+            <img src="{{asset('assets/Graphiste.png')}}" alt="Photographe">
+            <a href="{{ path('app_photographe', { 'experience': experience }) }}"><button>&lt;/Photographe&gt;</button></a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="image-button-block">
+            <img src="{{asset('assets/Développeur.png')}}" alt="Fleuriste">
+            <a href="{{ path('app_fleuriste', { 'experience': experience }) }}"><button>&lt;/Fleuriste&gt;</button></a>
+        </div>
+
+        <div class="image-button-block">
+            <img src="{{asset('assets/Commercial.png')}}" alt="Petite enfance">
+            <a href="{{ path('app_petite_enfance', { 'experience': experience }) }}"><button>&lt;/Petite enfance&gt;</button></a>
+        </div>
+
+        <div class="image-button-block">
+            <img src="{{asset('assets/Graphiste.png')}}" alt="Analyste">
+            <a href="{{ path('app_analyste', { 'experience': experience }) }}"><button>&lt;/Analyste&gt;</button></a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="image-button-block">
+            <img src="{{asset('assets/Développeur.png')}}" alt="Avocat">
+            <a href="{{ path('app_avocat', { 'experience': experience }) }}"><button>&lt;/Avocat&gt;</button></a>
+        </div>
+
+        <div class="image-button-block">
+            <img src="{{asset('assets/Commercial.png')}}" alt="Architecte">
+            <a href="{{ path('app_architecte', { 'experience': experience }) }}"><button>&lt;/Architecte&gt;</button></a>
+        </div>
+
+        <div class="image-button-block">
+            <img src="{{asset('assets/Graphiste.png')}}" alt="Ingénieur">
+            <a href="{{ path('app_ingenieur', { 'experience': experience }) }}"><button>&lt;/Ingénieur&gt;</button></a>
+        </div>
+    </div>
+
+</div>
+
+<!-- Bouton "Voir moins" qui s'affiche après avoir cliqué sur "Voir plus" -->
+<center><button class="VoirPLus hidden" id="voir-moins">Voir moins</button></center>
+
+<br><br><br><br>
+</div>
+{% endblock %}
+
+
+{% block javascripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Sélection des éléments
+        const metiersSupplementaires = document.getElementById('metiers-supplementaires');
+        const boutonVoirPlus = document.getElementById('voir-plus');
+        const boutonVoirMoins = document.getElementById('voir-moins');
+
+        // Événement pour afficher plus de métiers
+        boutonVoirPlus.addEventListener('click', function() {
+            metiersSupplementaires.classList.remove('hidden');
+            boutonVoirPlus.classList.add('hidden');
+            boutonVoirMoins.classList.remove('hidden');
+        });
+
+        // Événement pour masquer les métiers supplémentaires
+        boutonVoirMoins.addEventListener('click', function() {
+            metiersSupplementaires.classList.add('hidden');
+            boutonVoirMoins.classList.add('hidden');
+            boutonVoirPlus.classList.remove('hidden');
+        });
+    });
+</script>
+{% endblock %}

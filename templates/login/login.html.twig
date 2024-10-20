@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-5 BackgroundLoginUn">
+            <img class="GIFLogin" src="{{asset('assets/GIFLogin.gif')}}">
+        </div>
+        <div class="col-7 BackgroundLoginDeux">
+            <h1 class="TitreLogin">Ravis de vous revoir !</h1>
+            <span class="TexteUn">Connectez-vous !</span>
+
+            {% if error %}
+                <p class="message-erreur">Identifiant ou mot de passe incorrect. Merci de réessayer.</p>
+            {% endif %}
+
+            <center>
+                <form action="{{ path('app_login') }}" method="post">
+                    <input class="InputFormUn" id="username" name="_username"  placeholder="Identifiant :"><br>
+                    <input type="password" class="InputFormDeux" id="password" name="_password" placeholder="Mot de passe :"><br>
+                        {# <input class="InputFormUn" type="text" id="username" name="_username" required><br>
+                    <input class="InputFormDeux" type="password" id="password" name="_password" required><br> #}
+                    <button class="BoutonForm" type="submit">Commencer</button>
+                </form>
+                <a class="LienInscrire" href="{{path('app_register')}}">S'inscrire</a><a class="LienAide" href="#">Beosoin d'aide?</a>
+            </center>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

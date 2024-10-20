@@ -1,0 +1,148 @@
+.BackgroundGif {
+    background-image: url('/assets/BulleVerte1.gif');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center; 
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.line{
+    display: inline-block;
+    width: 100%;
+    font-family: "Helvetica";
+    color: #26bb8e;
+    font-size: 70px;
+    line-height: 70px;
+}
+
+.BlockLine{
+    margin-left: 490px;
+    margin-top: 180px;
+}
+
+.ImgPersonne{
+    width: 220px;
+    height: auto;
+}
+
+.BackgroundColor{
+    background-color: #f6eae1;
+}
+
+.ImgProgressionUn{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 40%;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.Items{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 50px;
+}
+
+.ItemsDeux{
+    margin-left: 90px;
+}
+
+.ItemsTrois{
+    margin-left: 130px;
+}
+
+.BlockSpan{
+    margin-left: 420px;
+}
+
+.LineWhite{
+    height: 5px;
+    background-color: white;
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.Chapeau{
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.Certificate{
+    width: 110px;
+    height: auto;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.Valise{
+    width: 100px;
+    height: auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    position: relative;
+    left: 15px;
+}
+
+.Senior{ 
+    width: 80px;
+    height: auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    position: relative;
+    left: 20px;
+}
+
+.LogoTousCV{
+    width: 90px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.Un,.Deux,.Trois,.Quatre,.Cinq{
+    width: 135px;
+    height: auto;
+}
+
+.Deux{
+    position: relative;
+    right:12px;
+    top: 7px;
+}
+
+.Trois{
+    position: relative;
+    top: 5px;
+    margin-bottom: 52px;
+}
+
+.Quatre{
+    position: relative;
+    bottom: 3px;
+    right:4px;
+}
+
+.Cinq{
+    margin-bottom: 100px;
+}
+
+.BlockImgUn,.BlockImgTrois{
+    float: right;
+    margin-right: 100px
+}
+
+.BlockImgDeux,.BlockImgQuatre{
+    margin-left: 100px;
+}
+
+
+

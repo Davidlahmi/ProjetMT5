@@ -1,0 +1,108 @@
+.BackgroundDegrader{
+    background: linear-gradient(to right, #f9aa92, #fdd9c8);
+    padding-top: 150px;
+}
+
+.BackgroundOrange{
+    background-color: #d57961;
+    border-radius: 70px;
+}
+
+.PositionnementMailEtTel {
+    display: flex;
+    gap: 20px; 
+}
+
+.PositionnementMailEtTel .form-group {
+    display: flex;
+    flex-direction: column; 
+}
+
+.TextInputForm{
+    font-family:"Poppins";
+    color: white;
+    font-size: 17px;
+}
+
+.InputFormNameFirstName{
+    width: 400px;
+    height: 40px;
+    border-radius: 6px;
+    border: none;
+    font-family: "Poppins";
+    margin-bottom: 20px;
+}
+
+.InputFormEmail,.InputFormTel{
+    width: 190px;
+    height: 40px;
+    border-radius: 6px;
+    border: none;
+    font-family: "Poppins";
+    margin-bottom: 20px;
+}
+
+.InputFormMessage{
+    width: 400px;
+    height: 150px;
+    border-radius: 6px;
+    border: none;
+    font-family: "Poppins";
+    margin-bottom: 20px;
+}
+
+.InputFormNameFirstName:focus,
+.InputFormEmail:focus,
+.InputFormTel:focus,
+.InputFormMessage {
+    border: none;
+    outline: none;
+}
+
+.InputFormBonton{
+    background: linear-gradient(to right, #5235c5, #9c5ff1);
+    color: white;
+    border-radius: 6px;
+    width: 150px;
+    height: 40px;
+    font-family: "Poppins";
+    border: none;
+    font-size: 16px;
+}
+
+.CenteredForm {
+    width: 100%;
+    max-width: 400px; 
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 30px; 
+}
+
+.CentreFormDeux{
+    padding-top: 30px;
+    padding-bottom: 30px; 
+}
+
+.TitreContact{
+    font-family: "Poppins";
+    font-size: 55px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.CouleurViolette{
+    color:#01cabd;
+}
+
+.ParagrapheInfoCv{
+    font-family: "Poppins";
+    font-size: 17px;
+}
+
+.Bold{
+    font-weight: bold;
+}
+
+
+

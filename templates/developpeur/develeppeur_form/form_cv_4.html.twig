@@ -1,0 +1,273 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire de génération de Cv{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/Cv_Form_Dev4.css') }}">
+{% endblock %}
+
+{% block body %}
+{{ form_start(form) }}
+    <div class="BackgroundOrange">
+        <div class="container-fluid m-0 p-0">
+            <div class="row g-0">
+                <div class="col" style="width: 13%; max-width: 13%;">
+                    <div class="BackgroundBleu">
+                        <h1 class="TexteImport">Importer votre photo</h1>
+                        <div class="photo-upload">
+                            <label for="photo-upload-input">
+                                <img id="photo-placeholder" src="{{ asset('assets/PhotoCv.png') }}" alt="Téléchargez une photo" class="photo-placeholder" style="cursor: pointer;">
+                            </label>
+                            {{ form_widget(form.PhotoPersonne, {'id': 'photo-upload-input', 'style': 'display: none;'}) }}
+                            <button type="button" id="reset-photo" class="BoutonRetirer">Retirer la photo</button>
+                            <div class="image-advice">
+                                <p>Conseil : pour un rendu optimal, nous vous recommandons d'utiliser une image au format PNG ou JPG avec une dimension de <strong>360 x 360 pixels</strong>. Vous pouvez redimensionner facilement votre image sur <a class="LienDecorationWhite" href="https://imageresizer.com/" target="_blank">Image Resizer</a>.</p>
+                                <p>Si vous souhaitez arrondir votre image, vous pouvez le faire en quelques clics avec <a class="LienDecorationWhite" href="https://www.rounder.com" target="_blank">Rounder</a> ou un autre outil similaire.</p>
+                            </div>
+                        </div>
+                        <h1 class="textcv">Cv en cours de création</h1>
+                        <img class="cv" src="{{asset('assets/CvDeveloppeur/4.png')}}">
+                    </div>
+                </div>
+
+                <div class="col" style="width: 87%; max-width: 87%;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 form">
+                                <h1 class="TitreUn">Génération du Cv 4 de fin d'étude</h1><br>
+                                <p class="InfoForm">Veuillez remplir le formulaire ci-dessous pour pouvoir passer<br> à la génération de votre CV avec vos informations</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form"><br><br>
+
+                    <div class="container">
+                        <div class="row">
+                            <h1 class="InfoInput">Information personnelle</h1>
+                            <div class="col-6">
+                                {{ form_row(form.nom, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': 'Nom :'}}) }}
+                            </div>
+                            <div class="col-6">
+                                {{ form_row(form.prenom, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': 'Prénom :'}}) }}
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="container">
+                        <div class="row">
+                            <h1 class="InfoInput">Coordonnées</h1>
+                            <div class="col-6">
+                                {{ form_row(form.pays, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': 'Pays :'}}) }}
+                            </div>
+                            <div class="col-6">
+                                {{ form_row(form.ville, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': 'Ville :'}}) }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                {{ form_row(form.email, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': 'Adresse email :'}}) }}
+                            </div>
+                            <div class="col-6">
+                                {{ form_row(form.tel, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': 'Téléphone :'}}) }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                {{ form_row(form.liensite, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': 'Lien de votre site :'}}) }}
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="container">
+                        <div class="row">
+                            <h1 class="InfoInput">Langue</h1>
+                            <div class="col-6">
+                                {{ form_row(form.langueune, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': 'Première langue :'}}) }}
+                            </div>
+                            <div class="col-6">
+                                {{ form_row(form.nivaulangueune, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': 'Niveau langue 1 :'}}) }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                {{ form_row(form.languedeux, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': 'Deuxième langue :'}}) }}
+                            </div>
+                            <div class="col-6">
+                                {{ form_row(form.niveaulanguedeux, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': 'Niveau langue 2 :'}}) }}
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="container">
+                        <div class="row">
+                            <h1 class="InfoInput">Compétences</h1>
+                            <div class="col-6">
+                                {{ form_row(form.competenceune, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': 'Compétence 1 :'}}) }}
+                            </div>
+                            <div class="col-6">
+                                {{ form_row(form.competencedeux, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': 'Compétence 2 :'}}) }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                {{ form_row(form.competencetrois, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': 'Compétence 3 :'}}) }}
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="container">
+                        <div class="row">
+                            <h1 class="InfoInput">Centre d'intérêt</h1>
+                            <div class="col-6">
+                                {{ form_row(form.cdune, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': "Centre d'intérêt 1"}}) }}
+                            </div>
+                            <div class="col-6">
+                                {{ form_row(form.cddeux, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': "Centre d'intérêt 2"}}) }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                {{ form_row(form.cdtrois, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': "Centre d'intérêt 3"}}) }}
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="container">
+                        <div class="row">
+                            <h1 class="InfoInput">Première expérience professionnelle</h1>
+                            <div class="col-6">
+                                {{ form_row(form.nom_metier_un, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': 'Nom du poste 1 :'}}) }}
+                            </div>
+                            <div class="col-6">
+                                {{ form_row(form.position_metier_un, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': 'Lieu du poste 1 :'}}) }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                {{ form_row(form.commentaire_metier_un, {'label': false, 'attr': {'class': 'InputFormm', 'placeholder': 'Description du poste 1 :'}}) }}
+                            </div>
+                            <div class="col-6">
+                                {{ form_row(form.commentaire_metier_deux, {'label': false, 'attr': {'class': 'InputFormm', 'placeholder': 'Description du poste 1 :'}}) }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                {{ form_row(form.commentaire_metier_trois, {'label': false, 'attr': {'class': 'InputFormm', 'placeholder': 'Description du poste 1 :'}}) }}
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="container">
+                        <div class="row">
+                            <h1 class="InfoInput">Deuxième expérience professionnelle</h1>
+                            <div class="col-6">
+                                {{ form_row(form.nom_metier_deux, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': 'Nom du poste 2 :'}}) }}
+                            </div>
+                            <div class="col-6">
+                                {{ form_row(form.position_metier_deux, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': 'Lieu du poste 2 :'}}) }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                {{ form_row(form.commentaire_metier_unn, {'label': false, 'attr': {'class': 'InputFormm', 'placeholder': 'Description du poste 2 :'}}) }}
+                            </div>
+                            <div class="col-6">
+                                {{ form_row(form.commentaire_metier_deuxx, {'label': false, 'attr': {'class': 'InputFormm', 'placeholder': 'Description du poste 2 :'}}) }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                {{ form_row(form.commentaire_metier_troiss, {'label': false, 'attr': {'class': 'InputFormm', 'placeholder': 'Description du poste 2 :'}}) }}
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="container">
+                        <div class="row">
+                            <h1 class="InfoInput">Troisième expérience professionnelle</h1>
+                            <div class="col-6">
+                                {{ form_row(form.nom_metier_trois, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': 'Nom du poste 3 :'}}) }}
+                            </div>
+                            <div class="col-6">
+                                {{ form_row(form.position_metier_trois, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': 'Lieu du poste 3 :'}}) }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                {{ form_row(form.commentaire_metier_unnn, {'label': false, 'attr': {'class': 'InputFormm', 'placeholder': 'Description du poste 3 :'}}) }}
+                            </div>
+                            <div class="col-6">
+                                {{ form_row(form.commentaire_metier_deuxxx, {'label': false, 'attr': {'class': 'InputFormm', 'placeholder': 'Description du poste 3 :'}}) }}
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="container">
+                        <div class="row">
+                            <h1 class="InfoInput">Formation</h1>
+                            <div class="col-6">
+                                {{ form_row(form.nom_formation, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': 'Nom de la formation :'}}) }}
+                            </div>
+                            <div class="col-6">
+                                {{ form_row(form.position_formation, {'label': false, 'attr': {'class': 'InputForm', 'placeholder': 'Lieu de la formation :'}}) }}
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                {{ form_row(form.generer, {'label': 'Générer votre CV', 'attr': {'class': 'BoutonGenerer'}}) }}
+                            </div>
+                        </div>
+                    </div><br>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{ form_end(form) }}
+{% endblock %}
+
+{% block javascripts %}
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const photoUploadInput = document.getElementById('photo-upload-input');
+    const photoPlaceholder = document.getElementById('photo-placeholder');
+    const resetPhotoButton = document.getElementById('reset-photo');
+
+    if (photoUploadInput && photoPlaceholder) {
+        photoPlaceholder.addEventListener('mousedown', function(event) {
+            event.preventDefault();
+            photoUploadInput.click();
+        });
+
+        photoUploadInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    photoPlaceholder.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    } else {
+        console.error("L'un des éléments n'a pas été trouvé dans le DOM.");
+    }
+
+    // Réinitialiser la photo à l'image par défaut
+    if (resetPhotoButton && photoPlaceholder) {
+        resetPhotoButton.addEventListener('click', function() {
+            // Remet l'image par défaut
+            photoPlaceholder.src = "{{ asset('assets/PhotoCv.png') }}";
+            // Réinitialise l'input file pour permettre de sélectionner la même photo à nouveau
+            photoUploadInput.value = "";
+        });
+    }
+});
+</script>
+{% endblock %}
+

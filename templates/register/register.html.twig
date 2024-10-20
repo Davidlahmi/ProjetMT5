@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/register.css') }}">
+    <style>
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            display: none;
+        }
+        .error {
+            border-color: red;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4 BackgroundUnInscription ">
+            <a href="{{path('app_home_page')}}"><img class="ImageRoboRegister" src="{{asset('assets/ImageRobo.png')}}"></a>
+            <p class="ParagrapheUN">Créer un nouveau<br>compte</p>
+            <center>
+                <span class="TexteUn">Déjà inscrit ? 
+                <span class="TexteDeux">
+                    <a class="LienDecoration LienConnexion" href="{{path('app_login')}}">
+                        Se connecter
+                    </a>
+                </span>
+                </span>
+            </center>
+            <div class="form">
+                {{ form_start(form, {'attr': {'id': 'registerForm'}}) }}
+                    <span class="TextInputForm">Prénom</span><br>
+                    {{ form_widget(form.name, {'attr': {'class': 'InputForm', 'placeholder': 'Entrez votre prénom'}}) }}<br><br>
+                    <span class="TextInputForm">Nom</span><br>
+                    {{ form_widget(form.lastname, {'attr': {'class': 'InputForm', 'placeholder': 'Entrez votre nom'}}) }}<br><br>
+                    <span class="TextInputForm">Email</span><br>
+                    {{ form_widget(form.email, {'attr': {'class': 'InputForm', 'placeholder': 'Entrez votre email'}}) }}<br><br>
+                    <span class="TextInputForm">Mot de passe</span><br>
+                    {{ form_widget(form.password, {'attr': {'class': 'InputForm', 'placeholder': 'Entrez votre mot de passe'}}) }}<br>
+
+                    <span class="error-message" id="password-error">Le mot de passe doit contenir au moins 8 caractères, une majuscule, un chiffre et un caractère spécial.</span><br><br>
+                    {{ form_widget(form.valider, {'label': "S'inscrire", 'attr': {'class': 'BoutonForm'}}) }}<br>
+                {{ form_end(form) }}
+            </div>
+        </div>
+        <div class="col-8 BackgroundDeuxInscription">
+            <h1 class="TitreCV">Construisez votre<br>CV maintenant</h1>
+            <img class="GIFInscription" src="{{asset('assets/GIFInscription.gif')}}">
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('#registerForm');
+    const passwordField = document.querySelector('#form_password'); // Mettez ici le bon ID généré pour le champ mot de passe
+    const passwordError = document.querySelector('#password-error');
+
+    form.addEventListener('submit', function(event) {
+        const password = passwordField.value;
+        const passwordCriteria = /^(?=.*[A-Z])(?=.*\d)(?=.*[\W]).{8,}$/;
+
+        if (!passwordCriteria.test(password)) {
+            event.preventDefault();
+            passwordError.style.display = 'block';
+            passwordField.classList.add('error');
+        } else {
+            passwordError.style.display = 'none';
+            passwordField.classList.remove('error');
+        }
+    });
+});
+
+</script>
+
+{% endblock %}

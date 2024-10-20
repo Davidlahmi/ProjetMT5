@@ -1,0 +1,116 @@
+.BackgroundLoginDeux{
+    background-color: #ffe6e6;
+}
+
+.BackgroundLoginUn{
+    background-color: #d8ccc2;
+}
+
+.GIFLogin{
+    width: 1000px;
+    height: auto;
+    display: block;
+    margin: auto;
+    margin-top: 7%;
+    position: relative;
+    left: -100px;
+}
+
+.TitreLogin{
+    font-size: 56px;
+    font-family: 'Agrandir';
+    font-weight: bold;
+    text-align: center;
+    color: #744c4d;
+    margin-top: 11%;
+}
+
+.TexteUn {
+    font-family: 'Public Sans';
+    color: #744c4d;
+    text-align: center;
+    display: block;
+    font-size: 33px;
+    margin-top: 3%;
+}
+
+.InputFormUn,.InputFormDeux{
+    width: 470px;
+    height: 52px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Public Sans';
+    color: #744c4d;
+    background-color: #fbd2cb;
+    padding-left: 2%;
+    font-size: 20px;
+}
+
+.InputFormUn{
+    margin-top: 5%;
+}
+
+.InputFormDeux{
+    margin-top: 3%;
+    margin-bottom: 4%;
+}
+
+.InputFormUn:focus {
+    outline: none;
+    border-color: #ccc;
+    box-shadow: none; 
+}
+
+.InputFormDeux:focus {
+    outline: none;
+    border-color: #ccc;
+    box-shadow: none; 
+}
+
+.InputFormUn::placeholder {
+    color: #744c4d;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}
+
+.InputFormDeux::placeholder {
+    color: #744c4d;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}
+
+.BoutonForm{
+    background-color: white;
+    border: none;
+    font-family: 'Public Sans';
+    color: #744c4d;
+    width: 220px;
+    height: 50px;
+    border-radius: 20px;
+    font-size: 26px;
+    margin-bottom: 5%;
+    margin-top: 2%;
+}
+
+.LienInscrire,.LienAide{
+    font-family: 'Public Sans';
+    color: #744c4d;
+    font-size: 19px;
+}
+
+.LienInscrire{
+    margin-right: 7%;
+}
+
+.message-erreur {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 20px;
+    color: red;
+    font-family: 'Public Sans';
+}
+
+
+

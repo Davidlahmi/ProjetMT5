@@ -1,0 +1,104 @@
+.TitreUn{
+    color: #53267a;
+    font-family: 'Anton', sans-serif;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.ImgProgressionDeux{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 40%;
+    height: auto;
+    padding-top: 80px;
+    padding-bottom: 20px;
+}
+
+.Items{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 50px;
+}
+
+.ItemsDeux{
+    margin-left: 90px;
+}
+
+.ItemsTrois{
+    margin-left: 130px;
+}
+
+.BlockSpan{
+    margin-left: 440px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+}
+
+
+.image-button-block {
+    position: relative; 
+    display: inline-block;
+}
+
+
+.image-button-block img {
+    width: 90%; 
+    display: block;
+    margin: auto;
+}
+
+.image-button-block button {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9aa92; 
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 28px;
+    border-radius: 40px;
+    width: 275px;
+    height: 55px;
+}
+
+.image-button-block button:hover {
+    background-color: #f9aa92;
+}
+
+.VoirPLus{
+    width: 250px;
+    height: 50px;
+    color: white;
+    background-color: green;
+    border-radius: 40px;
+    border: none;
+    font-size: 26px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 57px;
+}
+
+.hidden {
+    display: none;
+}
+
+.BlockSpanDeux{
+    margin-bottom: 60px;
+}
+
+.linemetier{
+    left: 120px;
+    position: relative;
+}

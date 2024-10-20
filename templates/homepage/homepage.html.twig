@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/HomePage.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+
+{# Premier Block avec Navbar #}
+<div class="container-fluid">
+    <div class="row BackgroundImageAccueil">
+        {# <div class="col-auto">
+            <a href="{{path('app_home_page')}}"><img src="{{ asset('assets/ImageRobo.png') }}" class="ImageRobo"></a>
+        </div> #}
+        {# <div class="col d-flex justify-content-end align-items-start">
+            <a href="#" class="BoutonAccueil custom-margin">Accueil</a>
+            <a href="#" class="BoutonApropos custom-margin">A propos</a>
+        </div>
+        <div class="col d-flex justify-content-start align-items-start">
+            <a href="#" class="BoutonContact">Contact</a>
+        </div> #}
+        <div class="col-12">
+            <p class="TexteUnAccueil">Créer en 5 minutes ton CV original et dit adieu aux salles d’attente car tu es les prochain employé </p>
+        </div>
+        <div class="col-12">
+            <img class="ImageFlechePF" src="{{asset('assets/avantapres.png')}}">
+        </div>
+    </div>
+</div>
+
+{# Deuxième Block Génère ton CV #}
+<div class="BlockGenereCV">
+    <a class="LienDecoration" href="{{path('app_experience_niveau')}}"><button class="BoutonGenereCV">
+        Génère ton CV
+        <img class="Loupe" src="{{asset('assets/Loupe.png')}}">
+    </button></a>
+    <img class="BlockImgCV" src="{{asset('assets/CarouselCV.png')}}">
+    {# Section d'Introduction pour les Conseils CV avec un Bouton #}
+<div class="conseil-section">
+    <h2 class="section-titre">Besoin de conseils pour remplir ton CV ?</h2><br>
+    <p class="section-texte">
+        Un bon CV peut faire toute la différence. Évitez les erreurs courantes, apprenez à mettre en avant vos compétences et découvrez ce que les recruteurs attendent vraiment ! Suivez nos conseils pour optimiser votre CV en fonction de votre métier et attirer l’attention des recruteurs.
+    </p><br>
+    <div class="bouton-conseil-container">
+        <a href="{{path('app_conseille_cv')}}">
+            <center><button class="BoutonConseil">Voir nos conseils pour bien remplir un CV</button></center>
+        </a>
+    </div>
+</div>
+</div>
+
+{% endblock %}

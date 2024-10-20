@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block stylesheets %}
+
+    <link rel="stylesheet" href="{{ asset('css/Contact.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+{% endblock %}
+
+{% block body %}
+
+
+<div class="BackgroundDegrader">
+    <div class="container BackgroundOrange">
+        <div class="row">
+            <div class="col-6">
+                <div class="CenteredForm">
+                    {{ form_start(form) }}
+                        <span class="TextInputForm">Nom et Prénom</span><br>
+                        {{form_widget(form.NameAndFirstName,{'attr':{'class' : 'InputFormNameFirstName'}})}}<br>
+                        <div class="PositionnementMailEtTel">
+                            <div class="form-group">
+                                <span class="TextInputForm">Email</span>
+                                {{ form_widget(form.email,{'attr':{'class' : 'InputFormEmail'}}) }}
+                            </div>
+                            <div class="form-group">
+                                <span class="TextInputForm">Téléphone</span>
+                                {{ form_widget(form.tel,{'attr':{'class' : 'InputFormTel'}}) }}
+                            </div>
+                        </div>
+                        <span class="TextInputForm">Message</span><br>
+                        {{form_widget(form.message,{'attr':{'class' : 'InputFormMessage'}})}}<br>
+                        {{form_widget(form.valider,{'label': "Envoyer" ,'attr':{'class' : 'InputFormBonton'}})}}<br><br>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="CentreFormDeux">
+                    <h1 class="TitreContact">Contactez <span class="CouleurViolette">Nous</span></h1>
+                    <p class="ParagrapheInfoCv">
+                        <span class="Bold">Besoin d'un nouveau métier ou d'un modèle de CV spécifique ?</span><br><br>
+                        Notre application vous permet de générer automatiquement des CV personnalisés à partir de 
+                        templates adaptés. Si vous souhaitez ajouter un nouveau métier, un modèle de CV, ou finaliser la 
+                        configuration pour générer un CV, n'hésitez pas à nous contacter. Remplissez simplement les
+                        champs du formulaire ci-dessous, et nous nous occuperons du reste !<br><br>
+                        Pour consulter les CV déjà disponibles et générables, ainsi que ceux qui sont en cours de création, cliquez <a href="{{path('app_liste_de_creation_de_cv')}}">ici.</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br><br>
+</div>
+
+{% endblock %}

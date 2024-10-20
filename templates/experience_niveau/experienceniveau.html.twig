@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ExperienceNiveau{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/Experience.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid BackgroundGif">
+    <div class="row">
+        <div class="col-7">
+            <div class="BlockLine">
+                <span class="line">SAISIR SON</span><br>
+                <span class="line">EXPERIENCE</span><br>
+            </div>
+        </div>
+        <div class="col-5">
+            <img class="ImgPersonne" src="{{ asset('assets/ImagePersonne.png') }}">
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid BackgroundColor">
+    <div class="row">
+
+        <div class="col-12">
+
+            <img class="ImgProgressionUn" src="{{ asset('assets/ProgressionUn.png') }}">
+
+            <div class="BlockSpan">
+                <span class="Items ItemUn">Ajouter une experience</span>
+                <span class="Items ItemsDeux">Choisir le modèle</span>
+                <span class="Items ItemsTrois">Généré son CV</span>
+            </div>
+
+            <div class="LineWhite"></div>
+
+        </div>
+
+        <div class="col-6">
+            <div class="BlockImgUn">
+                <img class="Chapeau" src="{{ asset('assets/chapeau.png') }}"><br>
+                <a href="{{ path('app_metier', { 'experience': 'alternance' }) }}"><img class="Un" src="{{ asset('assets/1.png') }}"></a>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="BlockImgDeux">
+                <img class="Certificate" src="{{ asset('assets/certificate.png') }}"><br>
+                <a href="{{ path('app_metier', { 'experience': 'FinEtude' }) }}"><img class="Deux" src="{{ asset('assets/2.png') }}"></a>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="BlockImgTrois">
+                <img class="Valise" src="{{ asset('assets/valise.png') }}"><br>
+                <a href="{{ path('app_metier', { 'experience': '0-10-ans' }) }}"><img class="Trois" src="{{ asset('assets/3.png') }}"></a>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="BlockImgQuatre">
+                <img class="Senior" src="{{ asset('assets/senior.png') }}"><br>
+                <a href="{{ path('app_metier', { 'experience': 'PlusDe10ans' }) }}"><img class="Quatre" src="{{ asset('assets/4.png') }}"></a>
+            </div>
+        </div>
+
+    </div>
+
+    <center>
+        <img class="LogoTousCV" src="{{ asset('assets/LogoTousCV.png') }}"><br>
+        <a href="{{ path('app_metier', { 'experience': 'TousCv' }) }}"><img class="Cinq" src="{{asset('assets/5.png')}}"></a>
+    </center>
+
+</div>
+
+{% endblock %}
